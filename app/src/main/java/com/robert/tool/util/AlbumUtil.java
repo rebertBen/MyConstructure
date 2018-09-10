@@ -3,6 +3,7 @@ package com.robert.tool.util;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
+import com.robert.tool.view.image.SelectPhotoActivity;
 import com.yanzhenjie.album.Action;
 import com.yanzhenjie.album.Album;
 import com.yanzhenjie.album.AlbumConfig;
@@ -91,8 +92,8 @@ public class AlbumUtil {
      * 相册数据返回处理
      */
     private void dealData(Activity mActivity, boolean tag){
-        if (label == 100){ // PhotoSelectActivity
-//            ((PhotoSelectActivity) mActivity).getImgUrl(tag, pathList, takePhotoUrl);
+        if (label == 200){ // SelectPhotoActivity
+            ((SelectPhotoActivity) mActivity).getImgUrl(tag, pathList, takePhotoUrl);
         }
     }
 
