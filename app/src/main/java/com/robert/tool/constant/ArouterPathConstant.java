@@ -11,5 +11,10 @@ package com.robert.tool.constant;
  */
 public class ArouterPathConstant {
     public static final String PATH_TO_PHOTO = "/activity/photos";
+    public static final String PATH_TO_WEBVIEW = "/activity/webview";
+    public static final String PATH_TO_REFRESH = "/activity/refresh";
+    public static final String PATH_TO_QR_CODE = "/activity/zxing";
+    public static final String PATH_TO_DATABASE = "/activity/database";
+    public static final String PATH_TO_SNAP = "/activity/snap";
 
 }

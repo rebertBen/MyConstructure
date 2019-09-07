@@ -1,7 +1,7 @@
 package com.robert.tool.util;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.robert.tool.view.image.SelectPhotoActivity;
 import com.yanzhenjie.album.Action;

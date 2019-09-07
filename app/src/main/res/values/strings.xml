@@ -5,5 +5,9 @@
     <string name="main_page">首页</string>
     <string name="select_photo">图片选择</string>
     <string name="title_error">标题错误</string>
+    <string name="webview">android与JS交互</string>
+    <string name="pull_refresh">下拉刷新</string>
+    <string name="qr_code">二维码</string>
+    <string name="data_base">GreenDao数据库</string>
 
 </resources>

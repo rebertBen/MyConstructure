@@ -10,5 +10,6 @@
     <color name="c999">#999999</color>
     <color name="blue">#448aff</color>
     <color name="color_transparent">#00000000</color>
+    <color name="blue_dark">#3BC0FB</color>
 
 </resources>

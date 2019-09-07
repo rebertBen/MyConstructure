@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_text"
+    android:layout_width="190dp"
+    android:layout_height="190dp"
+    android:layout_centerInParent="true"
+    android:textColor="@color/blue"
+    android:textSize="20sp"
+    android:background="@mipmap/icon_main_fragment_snap_circle2"
+    android:gravity="center">
+
+</TextView>

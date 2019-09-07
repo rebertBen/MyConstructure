@@ -13,4 +13,11 @@
         <item name="android:windowExitAnimation">@anim/alpha_out</item>
     </style>
 
+    <declare-styleable name="GalleryRecyclerView">
+        <attr name="helper" format="string">
+            <enum name="LinearSnapHelper" value="0" />
+            <enum name="PagerSnapHelper" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>

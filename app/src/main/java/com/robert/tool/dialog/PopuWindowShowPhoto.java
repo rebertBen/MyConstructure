@@ -2,7 +2,7 @@ package com.robert.tool.dialog;
 
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,7 @@ import android.widget.PopupWindow;
 
 import com.robert.tool.R;
 import com.robert.tool.adapter.MyViewPagerAdapter;
+import com.robert.tool.view.image.SelectPhotoActivity;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,15 @@ public class PopuWindowShowPhoto extends PopupWindow implements PopupWindow.OnDi
     private View contentView;
     private MyViewPagerAdapter adapter;
     private ViewPager viewPager;
-    private Activity context;
+    private Activity mActivity;
+
+    private static class Sington {
+        public static PopuWindowShowPhoto popuWindowShowPhoto = new PopuWindowShowPhoto();
+    }
+
+    public static PopuWindowShowPhoto getInstance(){
+        return Sington.popuWindowShowPhoto;
+    }
 
     /**
      * 图片展示
@@ -39,7 +48,7 @@ public class PopuWindowShowPhoto extends PopupWindow implements PopupWindow.OnDi
      * @param pos 当前图片位置
      */
     public void showWindow(final Activity context, ArrayList<String> urls, int pos) {
-        this.context = context;
+        mActivity = context;
 
         // 用于PopupWindow的View
         contentView = LayoutInflater.from(context)
@@ -66,15 +75,17 @@ public class PopuWindowShowPhoto extends PopupWindow implements PopupWindow.OnDi
 
     @Override
     public void onDismiss() {
-        WindowManager.LayoutParams lp = context.getWindow().getAttributes();
+        WindowManager.LayoutParams lp = mActivity.getWindow().getAttributes();
         lp.alpha = 1.0f;
-        context.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        context.getWindow().setAttributes(lp);
+        mActivity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        mActivity.getWindow().setAttributes(lp);
         popupWindow.dismiss();
     }
 
     @Override
     public void viewPagerClick() {
         onDismiss();
+        ((SelectPhotoActivity) mActivity).dismissFlag = false;
     }
+
 }

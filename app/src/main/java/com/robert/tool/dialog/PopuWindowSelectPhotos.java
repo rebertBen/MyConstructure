@@ -40,7 +40,6 @@ public class PopuWindowSelectPhotos extends PopupWindow {
     private PopuListAdapter adapter;
     private List<String> list = new ArrayList<>();
     private String title;
-    private ImageCallBack callBack;
 
     private static class Singleton{
         public static final PopuWindowSelectPhotos instance = new PopuWindowSelectPhotos();

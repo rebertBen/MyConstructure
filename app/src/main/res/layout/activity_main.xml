@@ -19,13 +19,6 @@
             android:text="图片选择" />
 
         <Button
-            android:id="@+id/wechat_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="微信登录" />
-
-        <Button
             android:id="@+id/js_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,6 +31,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="下拉刷新" />
+
+        <Button
+            android:id="@+id/database_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="数据库" />
+
+        <Button
+            android:id="@+id/snap_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Snap_RecyclerView" />
 
         <Button
             android:id="@+id/zxing_btn"
@@ -59,6 +66,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="图片轮询" />
+
+        <Button
+            android:id="@+id/wechat_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="微信登录" />
 
         <Button
             android:id="@+id/video_btn"

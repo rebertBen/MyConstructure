@@ -1,8 +1,10 @@
 package com.robert.tool.view.image;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.robert.tool.R;
@@ -18,7 +20,6 @@ import com.yanzhenjie.album.AlbumFile;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -34,6 +35,7 @@ import butterknife.OnClick;
 @Route(path = ArouterPathConstant.PATH_TO_PHOTO)
 public class SelectPhotoActivity extends BaseActivity {
     private static final int IMG_SIZE = 9;
+    public boolean dismissFlag = false; // 是否预览图片状态
 
     RecyclerView recyclerView;
 
@@ -67,7 +69,8 @@ public class SelectPhotoActivity extends BaseActivity {
             public void onItemClick(int pos) {
                 ArrayList<String> urls = new ArrayList<>();
                 urls.addAll(list);
-                new PopuWindowShowPhoto().showWindow(SelectPhotoActivity.this, urls, pos);
+                PopuWindowShowPhoto.getInstance().showWindow(SelectPhotoActivity.this, urls, pos);
+                dismissFlag = true;
             }
 
             @Override
@@ -138,4 +141,14 @@ public class SelectPhotoActivity extends BaseActivity {
         adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            if (dismissFlag) {
+                PopuWindowShowPhoto.getInstance().onDismiss();
+                return false;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
